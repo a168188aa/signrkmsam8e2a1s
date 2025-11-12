@@ -1,29 +1,193 @@
-<!DOCTYPE html>
-<html lang="zh">
+<!doctype html>
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>截图工具</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Snipaste — 极速截图 · 即刻贴图 · 轻量工具</title>
+  <meta name="description" content="Snipaste：一款开箱即用的轻量截图与贴图工具。支持精确截取、标注、贴图固定、历史记录与跨平台下载。立即下载，提升你的工作效率。" />
+  <meta name="keywords" content="Snipaste, 截图, 贴图, 屏幕截图, 屏幕标注, 截图工具, screenshot" />
+  <!-- Google Ads landing page tips:
+       1) 页面与广告文案保持高度相关（标题、CTA、关键词）；
+       2) 首屏明确核心价值（快速截图、贴图固定、注释）；
+       3) 显示下载按钮与信任标识（版本、用户数、媒体报道）；
+       4) 保持加载速度快、移动端适配与隐私声明；
+       5) 提供清晰转化路径（下载/试用/付费升级）。
+  -->
   <style>
-    body {
-      margin: 0;
-      background: #000;
-    }
-    a {
-      display: block;       /* 链接撑满整个图片 */
-      text-decoration: none;
-    }
-    img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
+    :root{--accent:#0f62fe;--muted:#6b7280;--bg:#f8fafc;font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:#0f1724}
+    .container{max-width:1100px;margin:0 auto;padding:28px}
+    header{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .logo{display:flex;align-items:center;gap:10px}
+    .logo-mark{width:40px;height:40px;border-radius:8px;background:linear-gradient(135deg,#0f62fe,#6f79f6);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+    .nav a{margin-left:18px;color:var(--muted);text-decoration:none}
+    .hero{display:flex;gap:32px;align-items:center;padding:40px 0}
+    .hero-left{flex:1}
+    h1{font-size:36px;margin:0 0 12px}
+    p.lead{color:var(--muted);margin:0 0 20px}
+    .ctas{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{padding:12px 18px;border-radius:10px;border:0;cursor:pointer;font-weight:600}
+    .btn-primary{background:var(--accent);color:#fff}
+    .btn-ghost{background:#fff;border:1px solid #e6eef9;color:var(--accent)}
+    .hero-right{flex:1;display:flex;justify-content:center}
+    .mock{width:360px;height:240px;border-radius:12px;background:linear-gradient(180deg,#fff,#f1f5ff);box-shadow:0 8px 30px rgba(15,98,254,0.12);display:flex;align-items:center;justify-content:center;border:1px solid #e6eef9}
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:28px}
+    .card{background:#fff;padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(12,18,32,0.04);border:1px solid #eef2ff}
+    .badge{display:inline-block;padding:6px 10px;background:#eef2ff;border-radius:999px;color:#0f62fe;font-weight:600;font-size:13px}
+    .trust{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+    .trust img{height:28px}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}
+    .testimonials{display:flex;flex-direction:column;gap:12px}
+    footer{padding:30px 0;color:var(--muted);font-size:14px}
+    @media (max-width:880px){.hero{flex-direction:column}.hero-right{order:-1}.h1{font-size:28px}}
   </style>
 </head>
 <body>
-  <!-- 点击图片跳转 -->
-  <a href="https://okxiazai.xyz/Snipaste.msi" target="_blank">
-    <img src="img_01.jpg" alt="推广图">
-  </a>
+  <div class="container">
+    <header>
+      <div class="logo"><div class="logo-mark">SP</div><div>
+        <div style="font-weight:700">Snipaste</div>
+        <div style="font-size:12px;color:var(--muted)">快速截图 · 即刻贴图</div>
+      </div></div>
+      <nav class="nav">
+        <a href="#features">功能</a>
+        <a href="#download">下载</a>
+        <a href="#faq">常见问题</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-left">
+          <span class="badge">免费 & 轻量</span>
+          <h1>一分钟上手的截图工具 — 截取、注释、贴图，效率看得见</h1>
+          <p class="lead">Snipaste 是一款面向个人与办公的轻量屏幕截图与贴图工具。抓取任意区域、一键注释、将截图固定为桌面贴图，帮助你更快完成说明、反馈与设计沟通。</p>
+
+          <div class="ctas">
+            <a class="btn btn-primary" href="#download">立即下载 — Windows</a>
+            <a class="btn btn-ghost" href="#features">查看功能</a>
+          </div>
+
+          <div class="trust" aria-hidden="true">
+            <span style="color:var(--muted);font-size:13px">被数百万用户信赖 · 支持 Windows / macOS / Linux</span>
+            <!-- Example trust badges -->
+            <img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='80' height='28'%3e%3crect width='80' height='28' rx='6' fill='%23edf2ff'/%3e%3ctext x='12' y='18' font-size='12' fill='%230f62fe'%3e用户口碑%3c/text%3e%3c/svg%3e" alt="badge">
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="mock">
+            <div style="text-align:center">
+              <div style="font-weight:700">预览：快速选区 & 注释</div>
+              <div style="color:var(--muted);margin-top:8px;font-size:13px">拖拽选取 → 右键标注 → Ctrl+S 保存</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features">
+        <h2 style="margin-top:8px">核心功能</h2>
+        <div class="features">
+          <div class="card">
+            <h3>精确截图</h3>
+            <p style="color:var(--muted)">像素级选择、窗口捕获、滚动截图（支持网页长截图）— 准确地捕捉你想要的内容。</p>
+          </div>
+          <div class="card">
+            <h3>贴图固定</h3>
+            <p style="color:var(--muted)">将截图固定在桌面上作为参考或演示（可点击穿透）— 协作演示更方便。</p>
+          </div>
+          <div class="card">
+            <h3>便捷标注</h3>
+            <p style="color:var(--muted)">文字、箭头、涂鸦与马赛克功能，一键生成可分享的图像。</p>
+          </div>
+          <div class="card">
+            <h3>历史记录与快速粘贴</h3>
+            <p style="color:var(--muted)">截图历史管理，常用截图可快速粘贴到任意应用。</p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>跨平台支持</h3>
+            <p style="color:var(--muted)">官方支持 Windows、macOS 与 Linux，安装包小、启动快。</p>
+            <ul style="color:var(--muted)">
+              <li>Windows EXE 安装/便携版</li>
+              <li>macOS DMG/签名支持</li>
+              <li>Linux AppImage / 包管理器</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>隐私与安全</h3>
+            <p style="color:var(--muted)">本地处理截图内容；不强制云上传；提供隐私声明与开源组件说明（如适用）。</p>
+          </div>
+        </div>
+      </section>
+
+      <section style="margin-top:28px" id="download">
+        <h2>下载与转化路径</h2>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px">
+          <a class="btn btn-primary" href="#" aria-label="下载 Windows 版">Windows 下载（EXE）</a>
+          <a class="btn btn-primary" href="#" aria-label="下载 macOS 版">macOS 下载（DMG）</a>
+          <a class="btn btn-primary" href="#" aria-label="下载 Linux 版">Linux 下载（AppImage）</a>
+          <a class="btn btn-ghost" href="#pricing">了解付费版</a>
+        </div>
+
+        <div style="margin-top:18px;color:var(--muted)">建议在 Google Ads 广告中使用 "快速截图"、"桌面贴图"、"截图注释工具" 等关键词，并在广告文字中包含“免费”、“小巧”、“无广告（如适用）”等卖点以提升点击质量。</div>
+      </section>
+
+      <section id="pricing" style="margin-top:28px">
+        <h2>版本与定价</h2>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px">
+          <div class="card" style="flex:1;min-width:240px">
+            <h3>免费版</h3>
+            <p style="color:var(--muted)">核心截图、标注与贴图功能。适合大多数个人用户。</p>
+            <div style="font-weight:700;margin-top:10px">永久免费</div>
+            <div style="margin-top:12px"><a class="btn btn-primary" href="#download">下载安装</a></div>
+          </div>
+          <div class="card" style="flex:1;min-width:240px;border:2px solid #dbeafe;">
+            <h3>专业版（Pro）</h3>
+            <p style="color:var(--muted)">额外功能：自动保存、高级注释模板、商业授权与优先支持。</p>
+            <div style="font-weight:700;margin-top:10px">建议定价：$9.99 / 年（示例）</div>
+            <div style="margin-top:12px"><a class="btn btn-ghost" href="#">立即试用</a></div>
+          </div>
+        </div>
+      </section>
+
+      <section style="margin-top:28px">
+        <h2>用户评价</h2>
+        <div class="testimonials">
+          <div class="card"><strong>"极简又强大，屏幕贴图功能是我的救星。"</strong><div style="color:var(--muted);margin-top:6px">— 产品经理 • 张女士</div></div>
+          <div class="card"><strong>"同事们都开始用 Snipaste 复现问题了，节省了不少沟通时间。"</strong><div style="color:var(--muted);margin-top:6px">— 开发工程师 • 李先生</div></div>
+        </div>
+      </section>
+
+      <section id="faq" style="margin-top:28px">
+        <h2>常见问题</h2>
+        <div style="display:grid;gap:12px;margin-top:12px">
+          <div class="card"><strong>是否免费？</strong><p style="color:var(--muted)">提供功能丰富的免费版，另有付费专业版供企业/进阶用户选择。</p></div>
+          <div class="card"><strong>如何保证隐私？</strong><p style="color:var(--muted)">默认本地处理截图；仅在用户选择时才上传到云或第三方服务。</p></div>
+          <div class="card"><strong>支持哪些平台？</strong><p style="color:var(--muted)">Windows、macOS、Linux（后续可能扩展至更多平台）。</p></div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+        <div>&copy; 2025 Snipaste。所有权利保留。<br><a href="#" style="color:var(--muted);text-decoration:underline">隐私政策</a> · <a href="#" style="color:var(--muted);text-decoration:underline">使用条款</a></div>
+        <div style="color:var(--muted);font-size:13px">有疑问？请联系：support@example.com</div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- 广告文案建议（供 Google Ads 使用）
+       标题示例：
+         - "Snipaste — 极速截图与桌面贴图"
+         - "免费截图工具：像素级截取与注释"
+       描述示例：
+         - "Snipaste 支持一键截图、注释与固定贴图。立即下载安装，提升工作效率。"
+         - "轻量、快速、隐私优先。支持 Windows/macOS/Linux。"
+       推荐关键词：截图工具, 屏幕截图, 截图注释, 桌面贴图, snipaste 下载
+  -->
 </body>
 </html>
